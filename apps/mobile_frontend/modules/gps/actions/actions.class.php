@@ -13,7 +13,7 @@
  *
  * @package    OpenPNE
  * @subpackage gps
- * @author     Your name here
+ * @author     Shinichi Urabe <urabe@tejimaya.com>
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
 class gpsActions extends sfActions
@@ -25,10 +25,31 @@ class gpsActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    require_once 'PEAR/Net/UserAgent/Mobile/GPS.php';
+    $this->setIncludePath();
+    require_once 'Net/UserAgent/Mobile/GPS.php';
     try {
       $this->carrierGps = Net_UserAgent_Mobile_GPS::factory();
     } catch (Net_UserAgent_Mobile_GPS_Exception $e) {
+
+      return sfView::ERROR;
+    }
+
+  return sfView::SUCCESS;
+  }
+
+ /**
+  * Executes send action
+  *
+  * @param sfWebRequest $request A request object
+  */
+  public function executeSend(sfWebRequest $request)
+  {
+    $this->setIncludePath();
+    require_once 'Net/UserAgent/Mobile/GPS.php';
+    try {
+      $this->carrierGps = Net_UserAgent_Mobile_GPS::factory();
+    } catch (Net_UserAgent_Mobile_GPS_Exception $e) {
+
       return sfView::ERROR;
     }
 
@@ -41,8 +62,16 @@ class gpsActions extends sfActions
         ->setLon($positon['lon'])
         ->setCarrier(opCarrierCheck::checkCarrier())
         ->save();
-      return sfView::SUCCESS;
+
+      $this->redirect('gps/index');
     }
-    return sfView::INPUT;
+  }
+
+  public function setIncludePath()
+  {
+    sfToolkit::addIncludePath(array(
+      //PEAR
+      dirname(__FILE__).'/../../../../../lib/vendor/PEAR/',
+    ));
   }
 }
