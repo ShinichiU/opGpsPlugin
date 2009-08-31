@@ -1,0 +1,19 @@
+Navigation:
+  default_navigation_gps:
+    type: "default"
+    uri: "@gps_index"
+    sort_order: 20
+    Translation:
+      en:
+        caption: "GPS"
+      ja_JP:
+        caption: "位置情報"
+  mobile_home_side_navigation_gps:
+    type: "mobile_home_side"
+    uri: "@gps_index"
+    sort_order: 20
+    Translation:
+      en:
+        caption: "GPS"
+      ja_JP:
+        caption: "位置情報"
