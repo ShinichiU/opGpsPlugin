@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Net_UserAgent_Mobile_GPS</name>
+ <channel>pear.php.net</channel>
+ <summary>Interface for GPS</summary>
+ <description>converted to package2.xml from package.xml.</description>
+ <lead>
+  <name>Kei Horikita</name>
+  <user>kei</user>
+  <email>gps4mobile@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-09-14</date>
+ <time>09:40:22</time>
+ <version>
+  <release>0.1.1</release>
+  <api>0.1.1</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.php.net/license">php</license>
+ <notes>alpha version.</notes>
+ <contents>
+  <dir name="/">
+   <file baseinstalldir="Net" md5sum="3297d8f5c01eb33e1ae45d7be0b33a21" name="UserAgent/Mobile/GPS/Docomo.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="Net" md5sum="8bd83ccf28677b3ef476514548a2ac5e" name="UserAgent/Mobile/GPS/Exception.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="Net" md5sum="7456e2991c45ed2a573b0c533e20a720" name="UserAgent/Mobile/GPS/Ezweb.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="Net" md5sum="fed7d2b864f089f52f008701247154a0" name="UserAgent/Mobile/GPS/Provider.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="Net" md5sum="afc809a00f528571145b8cf6ec7cb266" name="UserAgent/Mobile/GPS/Softbank.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="Net" md5sum="eeea470d93ca33dff55a1b4abfa6e268" name="UserAgent/Mobile/GPS/Willcom.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="Net" md5sum="5bf849bdb6d3eccc68d4c097aacd41bd" name="UserAgent/Mobile/GPS.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>PEAR</name>
+    <channel>pear.php.net</channel>
+    <min>1.3.5</min>
+   </package>
+   <package>
+    <name>Net_UserAgent_Mobile</name>
+    <channel>pear.php.net</channel>
+    <min>0.1</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.1.1</release>
+    <api>0.1.1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2008-09-14</date>
+   <license uri="http://www.php.net/license">php</license>
+   <notes>alpha version.</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2008-06-30</date>
+   <license uri="http://www.php.net/license">php</license>
+   <notes>alpha version.</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2008-06-30</date>
+   <license uri="http://www.php.net/license">php</license>
+   <notes>alpha version.</notes>
+  </release>
+ </changelog>
+</package>
