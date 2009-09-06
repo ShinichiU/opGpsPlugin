@@ -32,6 +32,17 @@ class gpsActions extends sfActions
       return sfView::ERROR;
     }
 
-    return sfView::SUCCESS;
+    if($request->isMethod(sfWebRequest::GET)) {
+      $positon = $this->carrierGps->getGPSResponse();
+      $gpsInsert = new MemberGpsPosition();
+      $gpsInsert
+        ->setMemberId($this->getUser()->getMemberId())
+        ->setLat($positon['lat'])
+        ->setLon($positon['lon'])
+        ->setCarrier(opCarrierCheck::checkCarrier())
+        ->save();
+      return sfView::SUCCESS;
+    }
+    return sfView::INPUT;
   }
 }

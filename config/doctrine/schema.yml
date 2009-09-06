@@ -6,7 +6,9 @@ MemberGpsPosition:
   columns:
     id: { type: integer(4), primary: true, autoincrement: true }
     member_id: { type: integer(4), notnull: true }
-    carrier: { type: integer(4), notnull: true }
+    lat: { type: string(64), default: "", notnull: true, comment: "Latitude" }
+    lon: { type: string(64), default: "", notnull: true, comment: "Longitude" }
+    carrier: { type: string(8), notnull: true, comment: "Docomo or Au or Softbank or Willcom" }
   relations:
     Member:
       onDelete: cascade
