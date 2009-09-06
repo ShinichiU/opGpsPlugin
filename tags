@@ -1,0 +1,43 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+MOBILE_USER_AGENT	test/functional/mobile_frontend/skeletonActionsTest.php	/^define('MOBILE_USER_AGENT', 'KDDI-CA39 UP.Browser\/6.2.0.13.1.5 (FUI) MMP\/2.0');$/;"	d
+Mr_OpenPNE	test/functional/mobile_frontend/skeletonActionsTest.php	/^$Mr_OpenPNE = createUser('sns@example.com', $user);$/;"	v
+Mr_OpenPNE	test/functional/pc_frontend/skeletonActionsTest.php	/^$Mr_OpenPNE = createUser('sns@example.com', $user);$/;"	v
+PluginMemberGpsPositionTable	lib/model/doctrine/PluginMemberGpsPositionTable.class.php	/^class PluginMemberGpsPositionTable extends Doctrine_Table$/;"	c
+_test_dir	test/bootstrap/unit.php	/^$_test_dir = realpath(dirname(__FILE__).'\/..');$/;"	v
+app	test/bootstrap/database.php	/^  $app = array_pop($dirPieces);$/;"	v
+app	test/bootstrap/functional.php	/^  $app = array_pop($dirPieces);$/;"	v
+browser	test/functional/mobile_frontend/skeletonActionsTest.php	/^$browser = new sfBrowser();$/;"	v
+caller	test/bootstrap/database.php	/^  $caller = $traces[0];$/;"	v
+caller	test/bootstrap/functional.php	/^  $caller = $traces[0];$/;"	v
+configuration	test/bootstrap/database.php	/^$configuration = ProjectConfiguration::getApplicationConfiguration($app, 'test', true);$/;"	v
+configuration	test/bootstrap/functional.php	/^$configuration = ProjectConfiguration::getApplicationConfiguration($app, 'test', isset($debug) ? $debug : true);$/;"	v
+configuration	test/bootstrap/unit.php	/^$configuration = new ProjectConfiguration(realpath($_test_dir.'\/..\/..\/..\/'));$/;"	v
+createUser	test/functional/mobile_frontend/skeletonActionsTest.php	/^function createUser($mailAddress, $user)$/;"	f
+createUser	test/functional/pc_frontend/skeletonActionsTest.php	/^function createUser($mailAddress, $user)$/;"	f
+dirPieces	test/bootstrap/database.php	/^  $dirPieces = explode(DIRECTORY_SEPARATOR, dirname($caller['file']));$/;"	v
+dirPieces	test/bootstrap/functional.php	/^  $dirPieces = explode(DIRECTORY_SEPARATOR, dirname($caller['file']));$/;"	v
+gpsActions	apps/mobile_frontend/modules/gps/actions/actions.class.php	/^class gpsActions extends sfActions$/;"	c
+gpsActions	apps/pc_frontend/modules/gps/actions/actions.class.php	/^class gpsActions extends sfActions$/;"	c
+gpsInsert	apps/mobile_frontend/modules/gps/actions/actions.class.php	/^      $gpsInsert = new MemberGpsPosition();$/;"	v
+gpsInsert	apps/pc_frontend/modules/gps/actions/actions.class.php	/^      $gpsInsert = new MemberGpsPosition();$/;"	v
+init	test/functional/mobile_frontend/skeletonActionsTest.php	/^function init()$/;"	f
+init	test/functional/pc_frontend/skeletonActionsTest.php	/^function init()$/;"	f
+loadData	test/bootstrap/database.php	/^$loadData = new sfDoctrineLoadDataTask($configuration->getEventDispatcher(), new sfFormatter());$/;"	v
+mobileType	lib/util/opCarrierCheck.class.php	/^    $mobileType = parent::getInstance()->getMobile();$/;"	v
+opCarrierCheck	lib/util/opCarrierCheck.class.php	/^class opCarrierCheck extends opMobileUserAgent$/;"	c
+opGpsPluginGpsComponents	lib/action/opGpsPluginGpsComponents.class.php	/^class opGpsPluginGpsComponents extends sfComponents$/;"	c
+params	test/functional/mobile_frontend/skeletonActionsTest.php	/^  $params = array('authMailAddress' => array($/;"	v
+params	test/functional/pc_frontend/skeletonActionsTest.php	/^  $params = array('authMailAddress' => array($/;"	v
+positon	apps/mobile_frontend/modules/gps/actions/actions.class.php	/^      $positon = $this->carrierGps->getGPSResponse();$/;"	v
+positon	apps/pc_frontend/modules/gps/actions/actions.class.php	/^      $positon = $this->carrierGps->getGPSResponse();$/;"	v
+t	test/unit/model/SkeletonTest.php	/^$t = new lime_test(1, new lime_output_color());$/;"	v
+task	test/bootstrap/database.php	/^$task = new sfDoctrineBuildAllReloadTask($configuration->getEventDispatcher(), new sfFormatter());$/;"	v
+traces	test/bootstrap/database.php	/^  $traces = debug_backtrace();$/;"	v
+traces	test/bootstrap/functional.php	/^  $traces = debug_backtrace();$/;"	v
+user	test/functional/mobile_frontend/skeletonActionsTest.php	/^$user = new sfTestFunctional($browser, new lime_test(null, new lime_output_color()));$/;"	v
+user	test/functional/pc_frontend/skeletonActionsTest.php	/^$user = new sfTestFunctional(new sfBrowser(), new lime_test(null, new lime_output_color()));$/;"	v

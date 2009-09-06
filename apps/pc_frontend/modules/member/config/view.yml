@@ -1,10 +1,10 @@
 homeSuccess:
   customize:
     nowPosition:
-      template: [gps, nowPosition]
+      template: [gps, infomationNowPosition]
       parts   : [information]
       target  : [bodyBottom]
-      is_component: false
+      is_component: true
 
 profileSuccess:
   customize:
@@ -12,4 +12,4 @@ profileSuccess:
       template: [gps, nowPosition]
       parts:    [profile]
       target:   [after]
-      is_component: false
+      is_component: true
