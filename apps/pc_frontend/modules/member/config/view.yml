@@ -1,0 +1,15 @@
+homeSuccess:
+  customize:
+    nowPosition:
+      template: [gps, nowPosition]
+      parts   : [information]
+      target  : [bodyBottom]
+      is_component: false
+
+profileSuccess:
+  customize:
+    nowPosition:
+      template: [gps, nowPosition]
+      parts:    [profile]
+      target:   [after]
+      is_component: false

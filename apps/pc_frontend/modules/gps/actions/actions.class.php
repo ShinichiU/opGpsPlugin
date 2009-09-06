@@ -25,6 +25,7 @@ class gpsActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->forward('default', 'module');
+    $this->ua = opMobileUserAgent::getInstance()->getMobile();
+    return sfView::SUCCESS;
   }
 }

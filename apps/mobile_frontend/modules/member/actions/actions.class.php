@@ -9,14 +9,14 @@
  */
 
 /**
- * gps actions.
+ * member actions.
  *
  * @package    OpenPNE
- * @subpackage gps
+ * @subpackage member
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
-class gpsActions extends sfActions
+class memberActions extends sfActions
 {
  /**
   * Executes index action
@@ -25,7 +25,6 @@ class gpsActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->ua = opMobileUserAgent::getInstance()->getMobile();
-    return sfView::SUCCESS;
+    $this->forward('default', 'module');
   }
 }
