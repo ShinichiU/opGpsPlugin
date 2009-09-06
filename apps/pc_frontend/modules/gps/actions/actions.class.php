@@ -25,15 +25,13 @@ class gpsActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    require 'PEAR/Net/UserAgent/Mobile/GPS.php';
+    require_once 'PEAR/Net/UserAgent/Mobile/GPS.php';
     try {
       $this->carrierGps = Net_UserAgent_Mobile_GPS::factory();
     } catch (Net_UserAgent_Mobile_GPS_Exception $e) {
-      $this->e;
       return sfView::ERROR;
     }
 
-    $this->ua = opMobileUserAgent::getInstance()->getMobile();
     return sfView::SUCCESS;
   }
 }
