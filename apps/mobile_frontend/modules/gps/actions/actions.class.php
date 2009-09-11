@@ -18,4 +18,13 @@
  */
 class gpsActions extends opGpsPluginActions
 {
+ /**
+  * Executes index action
+  *
+  * @param sfWebRequest $request A request object
+  */
+  public function executeIndex(sfWebRequest $request)
+  {
+    $this->absoluteUrl = opCarrierCheck::isCookie();
+  }
 }

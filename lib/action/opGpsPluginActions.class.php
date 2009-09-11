@@ -44,8 +44,9 @@ class opGpsPluginActions extends sfActions
   */
   public function executeSend(sfWebRequest $request)
   {
-    if($request->isMethod(sfWebRequest::GET)) {
-      $positon = $this->carrierGps->getGPSResponse();
+
+    $positon = $this->carrierGps->getGPSResponse();
+    if ($positon['lat'] && $positon['lon']) {
       $gpsInsert = new MemberGpsPosition();
       $gpsInsert
         ->setMemberId($this->getUser()->getMemberId())
@@ -53,9 +54,9 @@ class opGpsPluginActions extends sfActions
         ->setLon($positon['lon'])
         ->setCarrier(opCarrierCheck::checkCarrier())
         ->save();
-
-      $this->redirect('gps/index');
     }
+
+    $this->redirect('gps/index');
   }
 
 }

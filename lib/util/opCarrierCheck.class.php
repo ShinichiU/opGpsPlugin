@@ -32,4 +32,9 @@ class opCarrierCheck extends opMobileUserAgent
       return 'other';
     }
   }
+
+  public function isCookie()
+  {
+    return parent::getInstance()->isCookie();
+  }
 }
