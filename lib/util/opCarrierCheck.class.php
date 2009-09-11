@@ -29,7 +29,12 @@ class opCarrierCheck extends opMobileUserAgent
     } elseif ($mobileType->isWillcom()) {
       return 'Willcom';
     } else {
-      return 'other';
+      if (strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false) {
+        return 'iPhone';
+      } else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Android') !== false) {
+        return 'Android';
+      }
+    return 'other';
     }
   }
 

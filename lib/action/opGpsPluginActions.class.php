@@ -20,6 +20,7 @@ class opGpsPluginActions extends sfActions
   public function preExecute ()
   {
     require_once 'Net/UserAgent/Mobile/GPS.php';
+    $this->carrier = opCarrierCheck::checkCarrier();
     try {
       $this->carrierGps = Net_UserAgent_Mobile_GPS::factory();
     } catch (Net_UserAgent_Mobile_GPS_Exception $e) {
@@ -52,7 +53,7 @@ class opGpsPluginActions extends sfActions
         ->setMemberId($this->getUser()->getMemberId())
         ->setLat($positon['lat'])
         ->setLon($positon['lon'])
-        ->setCarrier(opCarrierCheck::checkCarrier())
+        ->setCarrier($this->carrier)
         ->save();
     }
 

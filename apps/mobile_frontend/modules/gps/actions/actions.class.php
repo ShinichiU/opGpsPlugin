@@ -25,6 +25,6 @@ class gpsActions extends opGpsPluginActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->absoluteUrl = opCarrierCheck::isCookie();
+    $this->isAbsoluteUrl = opCarrierCheck::isCookie();
   }
 }

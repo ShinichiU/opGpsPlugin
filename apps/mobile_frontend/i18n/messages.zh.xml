@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="">
+        <source>You can submit GPS Data</source>
+        <target>位置信息的?送好象可以?端的</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Send GPS Data</source>
+        <target>位置信息的?送</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
