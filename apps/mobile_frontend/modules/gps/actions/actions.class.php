@@ -16,15 +16,17 @@
  * @author     Shinichi Urabe <urabe@tejimaya.com>
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
-class gpsActions extends opGpsPluginActions
+class gpsActions extends opGpsPluginGpsActions
 {
  /**
   * Executes index action
   *
   * @param sfWebRequest $request A request object
   */
-  public function executeIndex(sfWebRequest $request)
+  public function executeNew(sfWebRequest $request)
   {
+    $this->form = new sfForm();
+    $this->carrierGps = Net_UserAgent_Mobile_GPS::factory();
     $this->isAbsoluteUrl = opCarrierCheck::isCookie();
   }
 }

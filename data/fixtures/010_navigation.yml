@@ -1,19 +1,46 @@
 Navigation:
+  secure_global_navigation_gps:
+    type: "secure_global"
+    uri: "@gps_list"
+    sort_order: 50
+    Translation:
+      en:
+        caption: "Foot Path"
+      ja_JP:
+        caption: "リアルあしあと"
   default_navigation_gps:
     type: "default"
-    uri: "@gps_index"
-    sort_order: 20
+    uri: "@gps_list_mine"
+    sort_order: 50
     Translation:
       en:
-        caption: "GPS"
+        caption: "Foot Path"
       ja_JP:
-        caption: "位置情報"
-  mobile_home_side_navigation_gps:
+        caption: "リアルあしあと"
+  friend_navigation_gps:
+    type: "friend"
+    uri: "@gps_list_member"
+    sort_order: 50
+    Translation:
+      en:
+        caption: "Foot Path"
+      ja_JP:
+        caption: "リアルあしあと"
+  mobile_home_side_navigation_gps_new:
     type: "mobile_home_side"
-    uri: "@gps_index"
-    sort_order: 20
+    uri: "@gps_new"
+    sort_order: 50
     Translation:
       en:
-        caption: "GPS"
+        caption: "Post a Foot Path"
       ja_JP:
-        caption: "位置情報"
+        caption: "ﾘｱﾙあしあとを残す"
+  mobile_home_side_navigation_gps_list:
+    type: "mobile_home_side"
+    uri: "@gps_list"
+    sort_order: 50
+    Translation:
+      en:
+        caption: "Recently Foot Path"
+      ja_JP:
+        caption: "最新のﾘｱﾙあしあと"

@@ -15,6 +15,6 @@
  * @subpackage gps
  * @author     Shinichi Urabe <urabe@tejimaya.com>
  */
-class gpsActions extends opGpsPluginActions
+class gpsActions extends opGpsPluginGpsActions
 {
 }

@@ -6,9 +6,22 @@ MemberGpsPosition:
   columns:
     id: { type: integer(4), primary: true, autoincrement: true }
     member_id: { type: integer(4), notnull: true }
-    lat: { type: string(64), default: "", notnull: true, comment: "Latitude" }
-    lon: { type: string(64), default: "", notnull: true, comment: "Longitude" }
-    carrier: { type: string(8), notnull: true, comment: "Docomo or Au or Softbank or Willcom" }
+    lat: { type: string(64), notnull: true, comment: "Latitude" }
+    lon: { type: string(64), notnull: true, comment: "Longitude" }
+    gcs: { type: string(8) }
+    location: { type: string(64), comment: "Location" }
+    carrier: { type: string(8), comment: "Docomo or Au or Softbank or Willcom or iPhone or Android" }
+    is_active: { type: integer(4), default: true }
+  relations:
+    Member:
+      onDelete: cascade
+
+MemberGpsConfig:
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    member_id: { type: integer(4), notnull: true }
+    map_type: { type: string(8), default: 1 }
+    public_flag: { type: integer(1), default: 1 }
   relations:
     Member:
       onDelete: cascade

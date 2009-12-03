@@ -1,0 +1,1 @@
+<img src="http://maps.google.com/staticmap?center=<?php echo $memberGpsPosition->getLat() ?>,<?php echo $memberGpsPosition->getLon() ?>&zoom=15&size=220x220&maptype=mobile&markers=<?php echo $memberGpsPosition->getLat() ?>,<?php echo $memberGpsPosition->getLon() ?>,blueb&key=<?php echo sfConfig::get('google_map_api_key') ?>" />

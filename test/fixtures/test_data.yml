@@ -1,19 +1,21 @@
-Member:
-  member_1:
-    id: ~
-    name: "OpenPNE君"
+MemberGpsPosition:
+<?php for ($i = 1; $i <= 20; $i++): ?>
+<?php for ($j = 1; $j <= 50; $j++): ?>
+  gps_data_<?php echo $j ?>_of_member_<?php echo $i ?>:
+    lat: "35.68<?php echo $j ?>893"
+    lon: "139.700<?php echo $i ?>74"
+    gcs: "WGS84"
+    location: "Tokyo"
+    carrier: "Docomo"
     is_active: 1
+    Member: member_<?php echo $i."\n" ?>
+<?php endfor; ?>
+<?php endfor; ?>
 
-MemberConfig:
-  member_address_1:
-    name: "pc_address"
-    value: "sns@example.com"
-    Member: member_1
-  member_mobile_address_1:
-    name: "mobile_address"
-    value: "sns@example.com"
-    Member: member_1
-  member_password_1:
-    name: "password"
-    value: "<?php echo md5('password') ?>"
-    Member: member_1
+MemberGpsConfig:
+<?php for ($i = 1; $i <= 20; $i++): ?>
+  gps_config_<?php echo $i ?>:
+    map_type: 1
+    public_flag: 1
+    Member: member_<?php echo $i."\n" ?>
+<?php endfor; ?>

@@ -16,6 +16,23 @@
 abstract class PluginMemberGpsPositionTable extends Doctrine_Table
 {
 
+  public function addGpsPosition($position, $carrier)
+  {
+    if ($position['lat'] && $position['lon']) {
+      $memberGpsPositon = new MemberGpsPosition();
+      $memberGpsPositon->setMemberId($this->getMine()->getId());
+      $memberGpsPositon->setLat($position['lat']);
+      $memberGpsPositon->setLon($position['lon']);
+      $memberGpsPositon->setCarrier($carrier);
+      $memberGpsPositon->save();
+
+      return $memberGpsPositon;
+    }
+
+    return false;
+  }
+
+
   public function getGpsList($limit = 5)
   {
     $q = $this->getOrderdQuery();
@@ -129,7 +146,7 @@ abstract class PluginMemberGpsPositionTable extends Doctrine_Table
     $q->andWhereIn('member_id', $friendIds);
   }
 
-  public function getPreviousGps(Gps $gps, $myMemberId)
+  public function getPreviousGps(MemberGpsPosition $gps, $myMemberId)
   {
     $q = $this->createQuery()
       ->andWhere('member_id = ?', $gps->getMemberId())
@@ -139,7 +156,7 @@ abstract class PluginMemberGpsPositionTable extends Doctrine_Table
     return $q->fetchOne();
   }
 
-  public function getNextDiary(Gps $Gps, $myMemberId)
+  public function getNextGps(MemberGpsPosition $gps, $myMemberId)
   {
     $q = $this->createQuery()
       ->andWhere('member_id = ?', $gps->getMemberId())
@@ -147,5 +164,10 @@ abstract class PluginMemberGpsPositionTable extends Doctrine_Table
       ->orderBy('id ASC');
 
     return $q->fetchOne();
+  }
+
+  protected function getMine()
+  {
+    return sfContext::getInstance()->getUser()->getMember();
   }
 }
