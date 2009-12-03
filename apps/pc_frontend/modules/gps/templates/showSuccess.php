@@ -18,7 +18,7 @@
 <p class="heading"><?php printf('%s (%s)', $memberGpsPosition->getLocation(), $memberGpsPosition->getCarrier()) ?></p>
 </div>
 <div class="body">
-<?php echo op_url_cmd(op_gps_generate_url($memberGpsPosition)) ?>
+<?php echo op_generate_google_cmd($memberGpsPosition) ?>
 <br /><a href="<?php echo op_gps_generate_url($memberGpsPosition, 1) ?>" target="_blank"><?php echo __('Show Google Map') ?></a>
 <br /><a href="<?php echo op_gps_generate_url($memberGpsPosition, 2) ?>" target="_blank"><?php echo __('Show Yahoo Map') ?></a>
 </div>

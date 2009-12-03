@@ -33,3 +33,8 @@ function op_gps_generate_url($position, $mapType = 1, $zoom = 15)
 
   return sprintf($url, $position->getLat(), $position->getLon(), $zoom);
 }
+
+function op_generate_google_cmd($position)
+{
+  return get_partial('gps/iframe', array('memberGpsPosition' => $position));
+}

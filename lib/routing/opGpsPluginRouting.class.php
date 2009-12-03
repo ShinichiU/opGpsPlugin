@@ -31,6 +31,12 @@ class opGpsPluginRouting
         array('id' => '\d+'),
         array('model' => 'MemberGpsPosition', 'type' => 'object')
       ),
+      'gps_googlemap' => new sfDoctrineRoute(
+        '/gps/:id/googlemap',
+        array('module' => 'gps', 'action' => 'googlemap'),
+        array('id' => '\d+'),
+        array('model' => 'MemberGpsPosition', 'type' => 'object')
+      ),
       'gps_list_mine' => new sfRoute(
         '/gps/listMember',
         array('module' => 'gps', 'action' => 'listMember')
@@ -47,13 +53,11 @@ class opGpsPluginRouting
       ),
       'gps_new' => new sfRoute(
         '/gps/new',
-        array('module' => 'gps', 'action' => 'new'),
-        array('_csrf_token' => '\w+', 'sf_method' => array('get'))
+        array('module' => 'gps', 'action' => 'new')
       ),
       'gps_create' => new sfRoute(
         '/gps/create',
-        array('module' => 'gps', 'action' => 'create'),
-        array('_csrf_token' => '\w+', 'sf_method' => array('get'))
+        array('module' => 'gps', 'action' => 'create')
       ),
       'gps_delete' => new sfDoctrineRoute(
         '/gps/:id/delete',

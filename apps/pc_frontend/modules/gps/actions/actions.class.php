@@ -17,4 +17,12 @@
  */
 class gpsActions extends opGpsPluginGpsActions
 {
+ /**
+  * Executes googlemap action
+  *
+  * @param sfWebRequest $request A request object
+  */
+  public function executeGooglemap(sfWebRequest $request)
+  {
+  }
 }

@@ -38,4 +38,8 @@ class gpsComponents extends opGpsPluginGpsComponents
         $this->getUser()->getMemberId()
       );
   }
+
+  public function executeGooglemap($request)
+  {
+  }
 }
