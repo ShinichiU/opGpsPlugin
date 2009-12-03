@@ -1,6 +1,7 @@
-<?php use_helper('Javascript') ?>
+<?php use_helper('Javascript', 'opGps') ?>
 <?php $googlemapsApikey = sfConfig::get('google_maps_api_key') ?>
 <?php $googleAjaxSearchApikey = sfConfig::get('google_ajax_search_api_key') ?>
+<?php $params = op_calc_gcs_to_WGS84($memberGpsPosition) ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
@@ -29,7 +30,7 @@ function OnLocalSearch() {
 }
 function load() {
   if (GBrowserIsCompatible()) {
-    var point = new GLatLng(".$memberGpsPosition->getLat().", ".$memberGpsPosition->getLon().");
+    var point = new GLatLng(".$params['lat'].", ".$params['lon'].");
     var zoom = 15;
     gMap = new GMap2(document.getElementById('map'));
     gMap.addControl(new GSmallMapControl());

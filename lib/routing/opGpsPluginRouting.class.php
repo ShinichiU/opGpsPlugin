@@ -56,8 +56,9 @@ class opGpsPluginRouting
         array('module' => 'gps', 'action' => 'new')
       ),
       'gps_create' => new sfRoute(
-        '/gps/create',
-        array('module' => 'gps', 'action' => 'create')
+        '/gps/create/:_csrf_token',
+        array('module' => 'gps', 'action' => 'create'),
+        array('_csrf_token' => '\w+')
       ),
       'gps_delete' => new sfDoctrineRoute(
         '/gps/:id/delete',

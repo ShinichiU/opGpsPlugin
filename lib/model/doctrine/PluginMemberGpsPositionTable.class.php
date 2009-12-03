@@ -18,11 +18,16 @@ abstract class PluginMemberGpsPositionTable extends Doctrine_Table
 
   public function addGpsPosition($position, $carrier)
   {
-    if ($position['lat'] && $position['lon']) {
+    $_lat = $this->formatString($position['lat']);
+    $_lon = $this->formatString($position['lon']);
+
+    if ($_lat && $_lon)
+    {
       $memberGpsPositon = new MemberGpsPosition();
       $memberGpsPositon->setMemberId($this->getMine()->getId());
-      $memberGpsPositon->setLat($position['lat']);
-      $memberGpsPositon->setLon($position['lon']);
+      $memberGpsPositon->setLat($_lat);
+      $memberGpsPositon->setLon($_lon);
+      $memberGpsPositon->setGcs('tokyo');
       $memberGpsPositon->setCarrier($carrier);
       $memberGpsPositon->save();
 
@@ -169,5 +174,15 @@ abstract class PluginMemberGpsPositionTable extends Doctrine_Table
   protected function getMine()
   {
     return sfContext::getInstance()->getUser()->getMember();
+  }
+
+  protected function formatString($param)
+  {
+    if (preg_match('@^\s*(.+)\s*$@', $param, $mache))
+    {
+      return $mache[1];
+    }
+
+    return false;
   }
 }
