@@ -6,22 +6,46 @@ MemberGpsPosition:
   columns:
     id: { type: integer(4), primary: true, autoincrement: true }
     member_id: { type: integer(4), notnull: true }
+    community_id: { type: integer(4) }
     lat: { type: string(64), notnull: true, comment: "Latitude" }
     lon: { type: string(64), notnull: true, comment: "Longitude" }
-    gcs: { type: string(8) }
-    location: { type: string(64), comment: "Location" }
-    carrier: { type: string(8), comment: "Docomo or Au or Softbank or Willcom or iPhone or Android" }
-    is_active: { type: integer(4), default: true }
+    gcs: { type: string(8), notnull: true, default: "" }
+    location: { type: string(64), notnull: true, default: "", comment: "Location" }
+    carrier: { type: string(8), notnull: true, default: "", comment: "Docomo or Au or Softbank or Willcom or iPhone or Android" }
+    is_active: { type: integer(4), notnull: true, default: true }
+    comment: { type: string }
   relations:
     Member:
       onDelete: cascade
+    Community:
+      onDelete: set null
+    GpsTags:
+      class: GpsTag
+      refClass: MemberGpsPositionTag
+      foreignAlias: MemberGpsPositions
+
+MemberGpsPositionTag:
+  columns:
+    member_gps_position_id: { type: integer(4), primary: true}
+    gps_tag_id: { type: integer(4), primary: true}
+  relations:
+    MemberGpsPosition:
+      foreignAlias: MemberGpsPositionTags
+    GpsTag:
+      foreignAlias: MemberGpsPositionTags
+
+GpsTag:
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    name: { type: string(255), notnull: true}
 
 MemberGpsConfig:
   columns:
     id: { type: integer(4), primary: true, autoincrement: true }
     member_id: { type: integer(4), notnull: true }
-    map_type: { type: string(8), default: 1 }
-    public_flag: { type: integer(1), default: 1 }
+    map_type: { type: string(8), notnull: true, default: 1 }
+    default_map_size: { type: integer(2), notnull: true, default: 5 }
+    public_flag: { type: integer(1), notnull: true, default: 1 }
   relations:
     Member:
       onDelete: cascade

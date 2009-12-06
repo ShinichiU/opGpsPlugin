@@ -2,15 +2,27 @@ MemberGpsPosition:
 <?php for ($i = 1; $i <= 20; $i++): ?>
 <?php for ($j = 1; $j <= 50; $j++): ?>
   gps_data_<?php echo $j ?>_of_member_<?php echo $i ?>:
-    lat: "35.68<?php echo $j ?>893"
-    lon: "139.700<?php echo $i ?>74"
+    lat: "35.40.<?php echo $j + 25 ?>.20"
+    lon: "139.41.<?php echo $i + 2 ?>.15"
     gcs: "wgs84"
-    location: "Tokyo"
+    location: ""
     carrier: "Docomo"
     is_active: 1
+    comment: "Hello World"
+    GpsTags: [test, doctrine, symfony, orm]
     Member: member_<?php echo $i."\n" ?>
 <?php endfor; ?>
 <?php endfor; ?>
+
+GpsTag:
+  test:
+    name: test
+  doctrine:
+    name: doctrine
+  symfony:
+    name: symfony
+  orm:
+    name: orm
 
 MemberGpsConfig:
 <?php for ($i = 1; $i <= 20; $i++): ?>
