@@ -29,7 +29,7 @@ function op_gps_generate_url($position, $mapType = 1, $zoom = 15)
     $url = 'http://www.google.co.jp/maps?ie=UTF8&ll=%s,%s&z=%s';
     break;
     case 2:
-    $params = array('lat' => $position->getLat(), 'lon' => $position->getLon());
+    $params = op_calc_gcs_to_tokyo($position);
     $url = 'http://map.yahoo.co.jp/pl?mode=map&type=scroll&lat=%s&lon=%s&sc=%s';
     $zoom = 5;
   }
@@ -44,20 +44,38 @@ function op_generate_google_cmd($position)
 
 function op_calc_gcs_to_WGS84($position)
 {
+  $_lat = op_calc_gps_decimal($position->getLat());
+  $_lon = op_calc_gps_decimal($position->getLon());
+
   if ('tokyo' == $position->getGcs())
   {
-    if (preg_match('@^(\d+)\.(\d+)\.(\d+)\.(\d+)$@', $position->getLat(), $params))
-    {
-      $_lat_1 = floor(($params[2] * 60000 + ($params[3] + 12) * 1000 + $params[4]) / 3.6);
-      $_lat = $params[1].'.'.$_lat_1;
-    }
-
-    if (preg_match('@^(\d+)\.(\d+)\.(\d+)\.(\d+)$@', $position->getLon(), $params))
-    {
-      $_lon_1 = floor(($params[2] * 60000 + ($params[3] - 12) * 1000 + $params[4]) / 3.6);
-      $_lon = $params[1].'.'.$_lon_1;
-    }
-
-    return array('lat' => $_lat, 'lon' => $_lon);
+    $_lat = $_lat - $_lat * 0.00010695  + $_lon * 0.000017464 + 0.0046017;
+    $_lon = $_lon - $_lat * 0.000046038 - $_lon * 0.000083043 + 0.010040;
   }
+
+  return array('lat' => $_lat, 'lon' => $_lon);
+}
+
+function op_calc_gcs_to_tokyo($position)
+{
+  $_lat = op_calc_gps_decimal($position->getLat());
+  $_lon = op_calc_gps_decimal($position->getLon());
+
+  if ('WGS84' == $position->getGcs())
+  {
+    $_lat = $_lat + $_lat * 0.00010696  - $_lon * 0.000017467 - 0.0046020;
+    $_lon = $_lon + $_lat * 0.000046047 + $_lon * 0.000083049 - 0.010041;
+  }
+
+  return array('lat' => $_lat, 'lon' => $_lon);
+}
+
+function op_calc_gps_decimal($value)
+{
+  if (preg_match('@^(\d+)\.(\d+)\.([\d\.]+)$@', $value, $params))
+  {
+    return $params[1] + $params[2] / 60 + $params[3] / 3600;
+  }
+
+  return $value;
 }
