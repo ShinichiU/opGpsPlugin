@@ -19,5 +19,25 @@ class opGpsPluginGpsComponents extends sfComponents
 {
   public function executeGpsList()
   {
+    $max = ($this->gadget) ? $this->gadget->getConfig('max') : 5;
+    $this->gpsList = Doctrine::getTable('MemberGpsPosition')->getGpsList($max);
+  }
+
+  public function executeMyGpsList()
+  {
+    $max = ($this->gadget) ? $this->gadget->getConfig('max') : 5;
+    $this->gpsList = Doctrine::getTable('MemberGpsPosition')->getMemberGpsList($this->getUser()->getMemberId(), $max, $this->getUser()->getMemberId());
+  }
+
+  public function executeFriendGpsList()
+  {
+    $max = ($this->gadget) ? $this->gadget->getConfig('max') : 5;
+    $this->gpsList = Doctrine::getTable('MemberGpsPosition')->getFriendGpsList($this->getUser()->getMemberId(), $max);
+  }
+
+  public function executeMemberGpsList(sfWebRequest $request)
+  {
+    $this->memberId = $request->getParameter('id', $this->getUser()->getMemberId());
+    $this->gpsList = Doctrine::getTable('MemberGpsPosition')->getMemberGpsList($this->memberId, 5, $this->getUser()->getMemberId());
   }
 }

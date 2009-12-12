@@ -5,11 +5,3 @@ homeSuccess:
       parts   : [information]
       target  : [bodyBottom]
       is_component: true
-
-profileSuccess:
-  customize:
-    nowPosition:
-      template: [gps, nowPosition]
-      parts:    [profile]
-      target:   [after]
-      is_component: true

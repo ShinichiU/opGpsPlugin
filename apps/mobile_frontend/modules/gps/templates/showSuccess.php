@@ -11,10 +11,9 @@
 </div>
 <?php endif; ?><br>
 
-<?php $apikey = sfConfig::get('google_maps_api_key') ?>
-<?php if (!empty($apikey)): ?>
+<?php if (!empty($googleMapsApiKey)): ?>
 <?php $params = op_calc_gcs_change($memberGpsPosition) ?>
-<img src="http://maps.google.com/staticmap?center=<?php echo $params['lat'] ?>,<?php echo $params['lon'] ?>&zoom=15&size=400x400&maptype=mobile&markers=<?php echo $params['lat'] ?>,<?php echo $params['lon'] ?>,blueb&key=<?php echo $apikey ?>" />
+<img src="http://maps.google.com/staticmap?center=<?php echo $params['lat'] ?>,<?php echo $params['lon'] ?>&zoom=15&size=200x300&maptype=mobile&markers=<?php echo $params['lat'] ?>,<?php echo $params['lon'] ?>,blueb&key=<?php echo $googleMapsApiKey ?>" />
 <?php else: ?>
 <?php echo __('empty google map api key.') ?>
 <?php endif; ?>

@@ -1,0 +1,40 @@
+Gadget:
+  gps_friend_list:
+    type: "contents"
+    name: "gpsFriendList"
+    sort_order: 101
+
+  gps_list:
+    type: "contents"
+    name: "gpsList"
+    sort_order: 102
+
+  gps_my_list:
+    type: "contents"
+    name: "gpsMyList"
+    sort_order: 103
+
+  gps_profile_list:
+    type: "profileContents"
+    name: "gpsMemberList"
+    sort_order: 101
+
+  mobile_gps_friend_list:
+    type: "mobileContents"
+    name: "gpsFriendList"
+    sort_order: 101
+
+  mobile_gps_list:
+    type: "mobileContents"
+    name: "gpsList"
+    sort_order: 102
+
+  mobile_gps_my_list:
+    type: "mobileContents"
+    name: "gpsMyList"
+    sort_order: 103
+
+  mobile_gps_profile_list:
+    type: "mobileProfileContents"
+    name: "gpsMemberList"
+    sort_order: 101

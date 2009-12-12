@@ -1,0 +1,62 @@
+gpsFriendList:
+  caption:
+    ja_JP: "マイフレンド最新リアルあしあと"
+  description:
+    ja_JP: "マイフレンドのリアルあしあとを新着順に表示します。"
+  component: [gps, friendGpsList]
+  config:
+    max:
+      Name:      "max"
+      Caption:   "最大表示件数"
+      FormType:  "select"
+      ValueType:  "int"
+      IsRequired: true
+      Default:    5
+      Choices:
+        1: 1
+        3: 3
+        5: 5
+        7: 7
+        10: 10
+
+gpsMyList:
+  caption:
+    ja_JP: "自分の最新リアルあしあと"
+  description:
+    ja_JP: "自分のリアルあしあとを新着順に表示します。"
+  component: [gps, myGpsList]
+  config:
+    max:
+      Name:      "max"
+      Caption:   "最大表示件数"
+      FormType:  "select"
+      ValueType:  "int"
+      IsRequired: true
+      Default:    5
+      Choices:
+        1: 1
+        3: 3
+        5: 5
+        7: 7
+        10: 10
+
+gpsList:
+  caption:
+    ja_JP: "全体の最新リアルあしあと"
+  description:
+    ja_JP: "全体のリアルあしあとを新着順に表示します。"
+  component: [gps, gpsList]
+  config:
+    max:
+      Name:      "max"
+      Caption:   "最大表示件数"
+      FormType:  "select"
+      ValueType:  "int"
+      IsRequired: true
+      Default:    5
+      Choices:
+        1: 1
+        3: 3
+        5: 5
+        7: 7
+        10: 10

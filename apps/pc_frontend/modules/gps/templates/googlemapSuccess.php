@@ -1,6 +1,4 @@
 <?php use_helper('Javascript', 'opGps') ?>
-<?php $googlemapsApikey = sfConfig::get('google_maps_api_key') ?>
-<?php $googleAjaxSearchApikey = sfConfig::get('google_ajax_search_api_key') ?>
 <?php $params = op_calc_gcs_change($memberGpsPosition) ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -9,9 +7,9 @@
 <?php include_http_metas() ?>
 <?php include_metas() ?>
 <title><?php echo ($op_config['sns_title']) ? $op_config['sns_title'] : $op_config['sns_name'] ?></title>
-<?php if (!empty($googlemapsApikey) && !empty($googleAjaxSearchApikey)): ?>
-<?php use_javascript('http://www.google.co.jp/uds/api?file=uds.js&v=1.0&key='.$googleAjaxSearchApikey) ?>
-<?php use_javascript('http://maps.google.co.jp/maps?file=api&v=1.0&key='.$googlemapsApikey) ?>
+<?php if ($googleAjaxSearchApiKey && $googleMapsApiKey): ?>
+<?php use_javascript('http://www.google.co.jp/uds/api?file=uds.js&v=1.0&key='.$googleAjaxSearchApiKey) ?>
+<?php use_javascript('http://maps.google.co.jp/maps?file=api&v=1.0&key='.$googleMapsApiKey) ?>
 <?php echo javascript_tag("
 var gls;
 var gMap;

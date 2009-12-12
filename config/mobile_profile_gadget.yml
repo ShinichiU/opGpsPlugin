@@ -1,0 +1,20 @@
+gpsMemberList:
+  caption:
+    ja_JP: "最新リアルあしあと"
+  description:
+    ja_JP: "メンバーのリアルあしあとを新着順に表示します。"
+  component: [gps, memberGpsList]
+  config:
+    max:
+      Name:      "max"
+      Caption:   "最大表示件数"
+      FormType:  "select"
+      ValueType:  "int"
+      IsRequired: true
+      Default:    5
+      Choices:
+        1: 1
+        3: 3
+        5: 5
+        7: 7
+        10: 10
