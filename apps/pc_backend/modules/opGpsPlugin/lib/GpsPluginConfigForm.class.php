@@ -18,8 +18,8 @@
 class GpsPluginConfigForm extends sfForm
 {
   protected $configs = array(
-    'google_maps_api_key'        => 'op_gps_plugin_api_key',
-    'google_ajax_search_api_key' => 'op_gps_plugin_search_api_key',
+    'google_maps_api_key'        => 'op_gps_plugin_google_maps_api_key',
+    'google_ajax_search_api_key' => 'op_gps_plugin_google_ajax_search_api_key',
   );
 
   public function configure()
@@ -35,7 +35,7 @@ class GpsPluginConfigForm extends sfForm
       }
     }
 
-    $this->getWidgetSchema()->setNameFormat('api_config[%s]');
+    $this->getWidgetSchema()->setNameFormat('gps_config[%s]');
   }
 
   public function save()

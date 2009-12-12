@@ -26,8 +26,8 @@ class opGpsPluginActions extends sfActions
 
   public function preExecute()
   {
-    $this->googleMapsApiKey = Doctrine::getTable('SnsConfig')->get('op_gps_plugin_api_key');
-    $this->googleAjaxSearchApiKey = Doctrine::getTable('SnsConfig')->get('op_gps_plugin_search_api_key');
+    $this->googleMapsApiKey = Doctrine::getTable('SnsConfig')->get('op_gps_plugin_google_maps_api_key');
+    $this->googleAjaxSearchApiKey = Doctrine::getTable('SnsConfig')->get('op_gps_plugin_google_ajax_search_api_key');
     $this->carrier = opCarrierCheck::checkCarrier();
 
     if (is_callable(array($this->getRoute(), 'getObject')))

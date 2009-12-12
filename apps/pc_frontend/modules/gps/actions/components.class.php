@@ -17,12 +17,6 @@
  */
 class gpsComponents extends opGpsPluginGpsComponents
 {
-  public function executeNowPosition()
-  {
-    $this->recentGpsList = Doctrine::getTable('MemberGpsPosition')
-      ->getMemberGpsList($this->member->getId(), 5, $this->getUser()->getMemberId());
-  }
-
   public function executeInfomationNowPosition($request)
   {
     $this->recentGpsList = Doctrine::getTable('MemberGpsPosition')
