@@ -65,11 +65,11 @@ class opGpsPluginGpsActions extends opGpsPluginActions
   public function executeCreate(sfWebRequest $request)
   {
     $request->checkCSRFProtection();
-    $memberGpsPosition = Doctrine::getTable('MemberGpsPosition')
-      ->addGpsPosition($this->getPosition(), $this->carrier);
 
-    if ($memberGpsPosition)
+    $mobile = new Geomobilejp_Mobile();
+    if ($mobile->hasParameter())
     {
+      $memberGpsPosition = Doctrine::getTable('MemberGpsPosition')->addGpsPosition($mobile, $this->carrier);
       $this->getUser()->setFlash('notice', 'send foot path success.');
       $this->redirect('@gps_show?id='.$memberGpsPosition->getId());
     }
@@ -91,12 +91,4 @@ class opGpsPluginGpsActions extends opGpsPluginActions
     $this->getUser()->setFlash('notice', 'delete foot path success.');
     $this->redirect('@homepage');
   }
-
-  protected function getPosition()
-  {
-    $carrierGps = Net_UserAgent_Mobile_GPS::factory();
-
-    return $carrierGps->getGPSResponse();
-  }
-
 }

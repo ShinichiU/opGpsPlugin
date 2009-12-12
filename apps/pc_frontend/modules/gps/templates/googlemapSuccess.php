@@ -1,7 +1,7 @@
 <?php use_helper('Javascript', 'opGps') ?>
 <?php $googlemapsApikey = sfConfig::get('google_maps_api_key') ?>
 <?php $googleAjaxSearchApikey = sfConfig::get('google_ajax_search_api_key') ?>
-<?php $params = op_calc_gcs_to_WGS84($memberGpsPosition) ?>
+<?php $params = op_calc_gcs_change($memberGpsPosition) ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
@@ -43,9 +43,13 @@ function load() {
   }
 }
 ") ?>
-<?php endif; ?>
 </head>
 <body onload="load()" onunload="GUnload()">
-<div id="map" style="width: 300px; height: 320px"><?php echo __('google maps apikey or google ajax search apikey is empty') ?></div>
+<div id="map" style="width: 300px; height: 320px"></div>
+<?php else: ?>
+</head>
+<body>
+<div style="width: 300px; height: 320px"><div style="position: absolute; height: 30px; width: 180px; top: 50%; left: 50%; margin: -15px 0 0 -90px;"><?php echo __('google maps apikey or google ajax search apikey is empty') ?></div></div>
+<?php endif; ?>
 </body>
 </html>

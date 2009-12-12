@@ -26,7 +26,6 @@ class opGpsPluginActions extends sfActions
 
   public function preExecute()
   {
-    require_once 'Net/UserAgent/Mobile/GPS.php';
     $this->carrier = opCarrierCheck::checkCarrier();
 
     if (is_callable(array($this->getRoute(), 'getObject')))

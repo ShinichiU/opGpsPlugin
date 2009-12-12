@@ -16,18 +16,23 @@
 abstract class PluginMemberGpsPositionTable extends Doctrine_Table
 {
 
-  public function addGpsPosition($position, $carrier)
+  public function addGpsPosition($mobile, $carrier)
   {
-    $_lat = $this->formatString($position['lat']);
-    $_lon = $this->formatString($position['lon']);
+    $_lat = $this->formatString($mobile->getLatitude());
+    $_lon = $this->formatString($mobile->getLongitude());
+    $_gcs = $mobile->getDatum();
 
     if ($_lat && $_lon)
     {
+      $converter = new Geomobilejp_Converter($_lat, $_lon, $_gcs);
+      $area = Geomobilejp_IArea::seekArea($converter);
+
       $memberGpsPositon = new MemberGpsPosition();
       $memberGpsPositon->setMemberId($this->getMine()->getId());
       $memberGpsPositon->setLat($_lat);
       $memberGpsPositon->setLon($_lon);
-      $memberGpsPositon->setGcs('tokyo');
+      $memberGpsPositon->setGcs($_gcs);
+      $memberGpsPositon->setLocation($area->getName());
       $memberGpsPositon->setCarrier($carrier);
       $memberGpsPositon->save();
 

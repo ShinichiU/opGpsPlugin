@@ -4,7 +4,7 @@ MemberGpsPosition:
   gps_data_<?php echo $j ?>_of_member_<?php echo $i ?>:
     lat: "35.68<?php echo $j ?>893"
     lon: "139.700<?php echo $i ?>74"
-    gcs: "WGS84"
+    gcs: "wgs84"
     location: "Tokyo"
     carrier: "Docomo"
     is_active: 1

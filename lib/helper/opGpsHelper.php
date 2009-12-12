@@ -25,11 +25,11 @@ function op_gps_generate_url($position, $mapType = 1, $zoom = 15)
   switch ($mapType)
   {
     case 1:
-    $params = op_calc_gcs_to_WGS84($position);
+    $params = op_calc_gcs_change($position, 'wgs84');
     $url = 'http://www.google.co.jp/maps?ie=UTF8&ll=%s,%s&z=%s';
     break;
     case 2:
-    $params = op_calc_gcs_to_tokyo($position);
+    $params = op_calc_gcs_change($position, 'tokyo');
     $url = 'http://map.yahoo.co.jp/pl?mode=map&type=scroll&lat=%s&lon=%s&sc=%s';
     $zoom = 5;
   }
@@ -42,40 +42,11 @@ function op_generate_google_cmd($position)
   return get_partial('gps/iframe', array('memberGpsPosition' => $position));
 }
 
-function op_calc_gcs_to_WGS84($position)
+function op_calc_gcs_change($position, $target = 'wgs84')
 {
-  $_lat = op_calc_gps_decimal($position->getLat());
-  $_lon = op_calc_gps_decimal($position->getLon());
+  $converter = new Geomobilejp_Converter($position->getLat(), $position->getLon(), $position->getGcs());
+  $converter->convert($target);
+  $converter->format('degree');
 
-  if ('tokyo' == $position->getGcs())
-  {
-    $_lat = $_lat - $_lat * 0.00010695  + $_lon * 0.000017464 + 0.0046017;
-    $_lon = $_lon - $_lat * 0.000046038 - $_lon * 0.000083043 + 0.010040;
-  }
-
-  return array('lat' => $_lat, 'lon' => $_lon);
-}
-
-function op_calc_gcs_to_tokyo($position)
-{
-  $_lat = op_calc_gps_decimal($position->getLat());
-  $_lon = op_calc_gps_decimal($position->getLon());
-
-  if ('WGS84' == $position->getGcs())
-  {
-    $_lat = $_lat + $_lat * 0.00010696  - $_lon * 0.000017467 - 0.0046020;
-    $_lon = $_lon + $_lat * 0.000046047 + $_lon * 0.000083049 - 0.010041;
-  }
-
-  return array('lat' => $_lat, 'lon' => $_lon);
-}
-
-function op_calc_gps_decimal($value)
-{
-  if (preg_match('@^(\d+)\.(\d+)\.([\d\.]+)$@', $value, $params))
-  {
-    return $params[1] + $params[2] / 60 + $params[3] / 3600;
-  }
-
-  return $value;
+  return array('lat' => $converter->getLatitude(), 'lon' => $converter->getLongitude());
 }
