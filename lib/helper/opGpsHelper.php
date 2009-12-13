@@ -50,3 +50,21 @@ function op_calc_gcs_change($position, $target = 'wgs84')
 
   return array('lat' => $converter->getLatitude(), 'lon' => $converter->getLongitude());
 }
+
+function op_image_path($filename, $options = array(), $absolute = false)
+{
+  if (!$filename)
+  {
+    if (isset($options['no_image']))
+    {
+      $filename = $options['no_image'];
+    }
+    else
+    {
+      $filename = 'no_image.gif';
+    }
+    return image_path($filename, $options, $absolute);
+  }
+
+  $filepath = sf_image_path($filename, $options, $absolute);
+}

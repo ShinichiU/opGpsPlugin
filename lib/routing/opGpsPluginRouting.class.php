@@ -25,6 +25,10 @@ class opGpsPluginRouting
         '/gps',
         array('module' => 'gps', 'action' => 'list')
       ),
+      'gps_list_xml' => new sfRoute(
+        '/gps/xml',
+        array('module' => 'gps', 'action' => 'list', 'sf_format' => 'xml')
+      ),
       'gps_show' => new sfDoctrineRoute(
         '/gps/:id',
         array('module' => 'gps', 'action' => 'show'),
@@ -41,15 +45,29 @@ class opGpsPluginRouting
         '/gps/listMember',
         array('module' => 'gps', 'action' => 'listMember')
       ),
+      'gps_list_mine_xml' => new sfRoute(
+        '/gps/listMember/xml',
+        array('module' => 'gps', 'action' => 'listMember', 'sf_format' => 'xml')
+      ),
       'gps_list_member' => new sfDoctrineRoute(
         '/gps/listMember/:id',
-        array('module' => 'gps', 'action' => 'listMember'),
+        array('module' => 'gps', 'action' => 'listMember', 'sf_format' => 'html'),
+        array('id' => '\d+'),
+        array('model' => 'Member', 'type' => 'object')
+      ),
+      'gps_list_member_xml' => new sfDoctrineRoute(
+        '/gps/listMember/:id/xml',
+        array('module' => 'gps', 'action' => 'listMember', 'sf_format' => 'xml'),
         array('id' => '\d+'),
         array('model' => 'Member', 'type' => 'object')
       ),
       'gps_list_friend' => new sfRoute(
         '/gps/listFriend',
         array('module' => 'gps', 'action' => 'listFriend')
+      ),
+      'gps_list_friend_xml' => new sfRoute(
+        '/gps/listFriend/xml',
+        array('module' => 'gps', 'action' => 'listFriend', 'sf_format' => 'xml')
       ),
       'gps_new' => new sfRoute(
         '/gps/new',
