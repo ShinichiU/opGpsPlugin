@@ -51,7 +51,7 @@ class opGpsPluginRouting
       ),
       'gps_list_member' => new sfDoctrineRoute(
         '/gps/listMember/:id',
-        array('module' => 'gps', 'action' => 'listMember', 'sf_format' => 'html'),
+        array('module' => 'gps', 'action' => 'listMember'),
         array('id' => '\d+'),
         array('model' => 'Member', 'type' => 'object')
       ),

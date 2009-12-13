@@ -25,14 +25,4 @@ class gpsActions extends opGpsPluginGpsActions
   public function executeGooglemap(sfWebRequest $request)
   {
   }
-
- /**
-  * Executes listMember action
-  *
-  * @param sfWebRequest $request A request object
-  */
-  public function executeListMember(sfWebRequest $request)
-  {
-    parent::executeListMember($request);
-  }
 }
