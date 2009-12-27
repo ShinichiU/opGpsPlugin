@@ -10,6 +10,7 @@
 <?php if ($googleAjaxSearchApiKey && $googleMapsApiKey): ?>
 <?php use_javascript('http://www.google.co.jp/uds/api?file=uds.js&v=1.0&key='.$googleAjaxSearchApiKey) ?>
 <?php use_javascript('http://maps.google.co.jp/maps?file=api&v=1.0&key='.$googleMapsApiKey) ?>
+<?php include_javascripts() ?>
 <?php echo javascript_tag("
 var gls;
 var gMap;

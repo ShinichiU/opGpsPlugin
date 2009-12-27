@@ -1,4 +1,4 @@
 all:
   javascript: [/opGpsPlugin/js/iPhone]
 googlemapSuccess:
-  layout: off
+  layout: false
