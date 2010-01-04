@@ -19,6 +19,7 @@ class gpsComponents extends opGpsPluginGpsComponents
 {
   public function executeInfomationNowPosition($request)
   {
+    $this->carrier = opCarrierCheck::checkCarrier();
     $this->recentGpsList = Doctrine::getTable('MemberGpsPosition')
       ->getFriendGpsList($this->getUser()->getMemberId(), 1);
   }

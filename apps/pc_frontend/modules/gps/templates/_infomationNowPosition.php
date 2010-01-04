@@ -6,3 +6,6 @@
 <?php endforeach; ?>
 </ul>
 <?php endif; ?>
+<?php if ('iPhone' == $carrier || 'Android' == $carrier): ?>
+<ul><li><?php echo link_to(__('You can send GPS Data.'), 'gps/new') ?></li></ul>
+<?php endif; ?>
