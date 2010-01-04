@@ -24,6 +24,22 @@ abstract class PluginMemberGpsPositionTable extends Doctrine_Table
 
     if ($_lat && $_lon)
     {
+      return $this->saveGpsPositon($_lat, $_lon, $_gcs, $carrier);
+    }
+
+    return false;
+  }
+
+  public function addGpsPcPosition($lat, $lon, $carrier)
+  {
+    $_lat = $this->formatString($lat);
+    $_lon = $this->formatString($lon);
+
+    return $this->saveGpsPositon($_lat, $_lon, 'wgs84', $carrier);
+  }
+
+  protected function saveGpsPositon($_lat, $_lon, $_gcs, $carrier)
+  {
       $converter = new Geomobilejp_Converter($_lat, $_lon, $_gcs);
       $area = Geomobilejp_IArea::seekArea($converter);
 
@@ -37,11 +53,7 @@ abstract class PluginMemberGpsPositionTable extends Doctrine_Table
       $memberGpsPositon->save();
 
       return $memberGpsPositon;
-    }
-
-    return false;
   }
-
 
   public function getGpsList($limit = 5)
   {
