@@ -9,21 +9,7 @@ function handleError(positionError)
   return false;
 }
 ") ?>
-<?php if ($carrier == 'iPhone'): ?>
-<?php echo javascript_tag("
-function submitGPS()
-{
-  var gps = navigator.geolocation;
-  gps.getCurrentPosition(setLatLonAndSubmit, handleError);
-}
-function setLatLonAndSubmit(position)
-{
-  lat.value = position.coords.latitude;
-  lon.value = position.coords.longitude;
-  document.getElementById('gps').submit();
-}
-") ?>
-<?php elseif ($carrier == 'Android'): ?>
+<?php if ($carrier == 'Android'): ?>
 <?php echo javascript_tag("
 function submitGPS()
 {
@@ -34,6 +20,20 @@ function setLatLonAndSubmit(position)
 {
   lat.value = position.latitude;
   lon.value = position.longitude;
+  document.getElementById('gps').submit();
+}
+") ?>
+<?php else: ?>
+<?php echo javascript_tag("
+function submitGPS()
+{
+  var gps = navigator.geolocation;
+  gps.getCurrentPosition(setLatLonAndSubmit, handleError);
+}
+function setLatLonAndSubmit(position)
+{
+  lat.value = position.coords.latitude;
+  lon.value = position.coords.longitude;
   document.getElementById('gps').submit();
 }
 ") ?>
