@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>opGpsPlugin</name>
+ <channel>plugins.openpne.jp</channel>
+ <summary>opGpsPlugin</summary>
+ <description>opGpsPlugin</description>
+ <lead>
+  <name>Shinichi Urabe</name>
+  <user>urabe</user>
+  <email />
+  <active>yes</active>
+ </lead>
+ <date>2010-01-23</date>
+ <time>21:11:53</time>
+ <version>
+  <release>0.0.1</release>
+  <api>0.0.1</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license>Apache</license>
+ <notes>first release</notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" md5sum="8dbede77bfa807bf1df2031d011753e0" name="apps/mobile_frontend/i18n/messages.fr.xml" role="data" />
+   <file baseinstalldir="/" md5sum="30066ab9dca07a1d49a20bf5f8f4a9e0" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
+   <file baseinstalldir="/" md5sum="6effdc0dc5e354aacb0cb7ceb62d0323" name="apps/mobile_frontend/i18n/messages.zh.xml" role="data" />
+   <file baseinstalldir="/" md5sum="88ebb362ea62e0b6370076bdba4c7f08" name="apps/mobile_frontend/modules/gps/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="a950ead748c50c265e6ed4ffba524e8a" name="apps/mobile_frontend/modules/gps/actions/components.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="31a9b416e4603892e50fc52658028ae8" name="apps/mobile_frontend/modules/gps/config/security.yml" role="data" />
+   <file baseinstalldir="/" md5sum="10f433149f1fe1631f106a8d46f222c0" name="apps/mobile_frontend/modules/gps/templates/indexError.php" role="data" />
+   <file baseinstalldir="/" md5sum="9c7a97d277828331d4027380c395c969" name="apps/mobile_frontend/modules/gps/templates/indexSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="apps/mobile_frontend/modules/gps/templates/listFriendSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="apps/mobile_frontend/modules/gps/templates/listMemberSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="apps/mobile_frontend/modules/gps/templates/listSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="f5949c14adbb8fdd4b73eb4bb54579e2" name="apps/mobile_frontend/modules/gps/templates/newSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="3f91d3c1f5e18a5e5a3c70b01ead14a3" name="apps/mobile_frontend/modules/gps/templates/sendError.php" role="data" />
+   <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="apps/mobile_frontend/modules/gps/templates/sendSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="050fd5126b45d77dc156457a33e24ed9" name="apps/mobile_frontend/modules/gps/templates/showSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="apps/mobile_frontend/modules/gps/templates/_friendGpsList.php" role="data" />
+   <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="apps/mobile_frontend/modules/gps/templates/_gpsList.php" role="data" />
+   <file baseinstalldir="/" md5sum="2fcede029faa4c54a1451534b71ecdba" name="apps/mobile_frontend/modules/gps/templates/_infomationNowPosition.php" role="data" />
+   <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="apps/mobile_frontend/modules/gps/templates/_memberGpsList.php" role="data" />
+   <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="apps/mobile_frontend/modules/gps/templates/_myGpsList.php" role="data" />
+   <file baseinstalldir="/" md5sum="ab2b2f5cfaed072c4ad55a29b6d0ea05" name="apps/mobile_frontend/modules/gps/templates/_nowPosition.php" role="data" />
+   <file baseinstalldir="/" md5sum="25dc7aec094d4914da5c3aa27221ba23" name="apps/pc_backend/modules/opGpsPlugin/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="e5e88a806e89f1e4a14b1e4dcff4bc61" name="apps/pc_backend/modules/opGpsPlugin/lib/GpsPluginConfigForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="24ab879fd94bba8089e3ecba020ec2df" name="apps/pc_backend/modules/opGpsPlugin/templates/indexSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="ef2589d967a4361dfdb36b00a69d4841" name="apps/pc_frontend/modules/gps/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="c61a738e49de6ff031715721932a17d3" name="apps/pc_frontend/modules/gps/actions/components.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="31a9b416e4603892e50fc52658028ae8" name="apps/pc_frontend/modules/gps/config/security.yml" role="data" />
+   <file baseinstalldir="/" md5sum="33e127e729aa83fa63c23fd5755497be" name="apps/pc_frontend/modules/gps/config/view.yml" role="data" />
+   <file baseinstalldir="/" md5sum="ee8aa238566f09cefdeba2146b25ea20" name="apps/pc_frontend/modules/gps/templates/googlemapSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="043cc04f077576aaa271e172916e7e2a" name="apps/pc_frontend/modules/gps/templates/indexError.php" role="data" />
+   <file baseinstalldir="/" md5sum="00c30208bcd881ec98d0d4149d0259b9" name="apps/pc_frontend/modules/gps/templates/listFriendSuccess.xml.php" role="data" />
+   <file baseinstalldir="/" md5sum="91734ef06cc90dde84e11edbb8393cd9" name="apps/pc_frontend/modules/gps/templates/listMemberSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="00c30208bcd881ec98d0d4149d0259b9" name="apps/pc_frontend/modules/gps/templates/listMemberSuccess.xml.php" role="data" />
+   <file baseinstalldir="/" md5sum="983325539632cf6b8227497f721c9474" name="apps/pc_frontend/modules/gps/templates/listSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="00c30208bcd881ec98d0d4149d0259b9" name="apps/pc_frontend/modules/gps/templates/listSuccess.xml.php" role="data" />
+   <file baseinstalldir="/" md5sum="0d1b487f7da9b4796948554278739cd3" name="apps/pc_frontend/modules/gps/templates/newSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="3f91d3c1f5e18a5e5a3c70b01ead14a3" name="apps/pc_frontend/modules/gps/templates/sendError.php" role="data" />
+   <file baseinstalldir="/" md5sum="d41d8cd98f00b204e9800998ecf8427e" name="apps/pc_frontend/modules/gps/templates/sendSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="39e47e1e876c54d54e2d86418b29e640" name="apps/pc_frontend/modules/gps/templates/showSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="33dc8786af6b651655c5298dbec8d1bb" name="apps/pc_frontend/modules/gps/templates/_friendGpsList.php" role="data" />
+   <file baseinstalldir="/" md5sum="e24ce26155f96e9a9d682a9604af17e1" name="apps/pc_frontend/modules/gps/templates/_gpsList.php" role="data" />
+   <file baseinstalldir="/" md5sum="400c0e66f99604390b393091e42e86bc" name="apps/pc_frontend/modules/gps/templates/_iframe.php" role="data" />
+   <file baseinstalldir="/" md5sum="ff632678c2a9ec6236688d1e0df3aaaa" name="apps/pc_frontend/modules/gps/templates/_infomationNowPosition.php" role="data" />
+   <file baseinstalldir="/" md5sum="33e76ad7dbb50989b0db0f1feccbb11b" name="apps/pc_frontend/modules/gps/templates/_list.xml.php" role="data" />
+   <file baseinstalldir="/" md5sum="3d42a066a3bb8679061902afad80e586" name="apps/pc_frontend/modules/gps/templates/_memberGpsList.php" role="data" />
+   <file baseinstalldir="/" md5sum="06913af8ee73b47adf2372564521aaf7" name="apps/pc_frontend/modules/gps/templates/_myGpsList.php" role="data" />
+   <file baseinstalldir="/" md5sum="7f7785ba04d1b27f2811393bc6f98cea" name="apps/pc_frontend/modules/member/config/view.yml" role="data" />
+   <file baseinstalldir="/" md5sum="c5d3034bdbc985184584e4065e401384" name="config/config.php" role="data" />
+   <file baseinstalldir="/" md5sum="ebabe8395c41571bce14cc0ca5e7f8be" name="config/gadget.yml" role="data" />
+   <file baseinstalldir="/" md5sum="d2f667d0485ad6f6bad38de1153a2af0" name="config/mobile_gadget.yml" role="data" />
+   <file baseinstalldir="/" md5sum="dd2785a7d093f6b13db863933eafb04a" name="config/mobile_profile_gadget.yml" role="data" />
+   <file baseinstalldir="/" md5sum="dd2785a7d093f6b13db863933eafb04a" name="config/profile_gadget.yml" role="data" />
+   <file baseinstalldir="/" md5sum="e4a7753b0bc0680705180fba9ff18112" name="config/doctrine/schema.yml" role="data" />
+   <file baseinstalldir="/" md5sum="67c0060c4ac16f826b6477bda8ff61be" name="data/fixtures/000_revision.yml" role="data" />
+   <file baseinstalldir="/" md5sum="7447262debc8d4b28c863b2561bb3f5b" name="data/fixtures/010_navigation.yml" role="data" />
+   <file baseinstalldir="/" md5sum="a3df22c0ba89ef06fa846f9371aef046" name="data/fixtures/020_gadget.yml" role="data" />
+   <file baseinstalldir="/" md5sum="36b2b9063ca7cf5763d2bf2a4eafde59" name="lib/action/opGpsPluginActions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="e737b4f0fc6a2c77d259dfd4515688e5" name="lib/action/opGpsPluginGpsActions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="ef7d9e0a5b1589d8800eb68dbcc06bf6" name="lib/action/opGpsPluginGpsComponents.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="2f69a3b64131411e953b322dc9cdbb52" name="lib/filter/doctrine/PluginGpsTagFormFilter.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="a37faa5c2bc96f842805f285741cfa04" name="lib/filter/doctrine/PluginMemberGpsConfigFormFilter.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="fc315142d134f7decec4f8a8c2a8b5f4" name="lib/filter/doctrine/PluginMemberGpsPositionFormFilter.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="0921ffabd6e24cb3e41980574d480c98" name="lib/filter/doctrine/PluginMemberGpsPositionTagFormFilter.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="a1e329d5bbd420eaa1503117b4349416" name="lib/form/doctrine/PluginGpsTagForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="7ededf45cd5ecb4348fdca625fd7e432" name="lib/form/doctrine/PluginMemberGpsConfigForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="7761b1faad9b5b43b107cf8bdfe65e38" name="lib/form/doctrine/PluginMemberGpsPositionForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="a99571c1aff555b13b2796fec3fdc913" name="lib/form/doctrine/PluginMemberGpsPositionTagForm.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="09b1243618bdfdf1a6d852d47faa5fcc" name="lib/helper/opGpsHelper.php" role="data" />
+   <file baseinstalldir="/" md5sum="78cb68534da3a64ce9c01b2d6af98aec" name="lib/model/doctrine/PluginGpsTag.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="615687ad71860974f6abc54e39e25041" name="lib/model/doctrine/PluginGpsTagTable.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="4a39898b0c6e3cb164a4e2e2b7216ae3" name="lib/model/doctrine/PluginMemberGpsConfig.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="c60c8ad4ad416657b00272e78c011b47" name="lib/model/doctrine/PluginMemberGpsConfigTable.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="de9d92df01fe7d6d837788cf84bbae33" name="lib/model/doctrine/PluginMemberGpsPosition.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="73cd7f5cfd6d5bed15cea59d3a5f3ce9" name="lib/model/doctrine/PluginMemberGpsPositionTable.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="66d76a6fabd8f47360a811b5b08fa3b1" name="lib/model/doctrine/PluginMemberGpsPositionTag.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="40a0a93f31b6fbd6ad825c15f66ffda5" name="lib/model/doctrine/PluginMemberGpsPositionTagTable.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="0dca597f977f075bd556fc6bdc2d3463" name="lib/routing/opGpsPluginRouting.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="e9744ca23311edbe383230cb3250c086" name="lib/util/opCarrierCheck.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="4f1692661f5809e7e501e001aa43abee" name="lib/vendor/Geomobilejp/Converter.php" role="data" />
+   <file baseinstalldir="/" md5sum="390bf85cc829adfdaa741059670abbb9" name="lib/vendor/Geomobilejp/IArea.php" role="data" />
+   <file baseinstalldir="/" md5sum="0ac497ec5d0ec437f79bb402c7f8dba1" name="lib/vendor/Geomobilejp/LICENSE" role="data" />
+   <file baseinstalldir="/" md5sum="e99a6452dd6fb1fc4def866cebd9c266" name="lib/vendor/Geomobilejp/Mobile.php" role="data" />
+   <file baseinstalldir="/" md5sum="3ab15a08d41c2fb30009c4577c097b2e" name="lib/vendor/Geomobilejp/Converter/Datum.php" role="data" />
+   <file baseinstalldir="/" md5sum="c13e0716ed1e39a8ed0c941137bcf367" name="lib/vendor/Geomobilejp/Converter/Format.php" role="data" />
+   <file baseinstalldir="/" md5sum="0841ceb38dee15f812561423e6c2160d" name="lib/vendor/Geomobilejp/Converter/Point.php" role="data" />
+   <file baseinstalldir="/" md5sum="3a18b9ce8df8f01739d169a8d283de21" name="lib/vendor/Geomobilejp/Converter/Datum/JGD2000.php" role="data" />
+   <file baseinstalldir="/" md5sum="50aa994566f0880f2bb00ea2c54566ee" name="lib/vendor/Geomobilejp/Converter/Datum/Tokyo.php" role="data" />
+   <file baseinstalldir="/" md5sum="8816f3014d84fdab8f7a172fd55fe82d" name="lib/vendor/Geomobilejp/Converter/Datum/WGS84.php" role="data" />
+   <file baseinstalldir="/" md5sum="d065fdd506f84cea5f7b0eea6ad2644c" name="lib/vendor/Geomobilejp/IArea/Area.php" role="data" />
+   <file baseinstalldir="/" md5sum="1e2bec377cbe285809e9b9ce024c4343" name="lib/vendor/Geomobilejp/IArea/iareadata.php" role="data" />
+   <file baseinstalldir="/" md5sum="59526cf3912558ac43b93b715c277a4f" name="lib/vendor/Geomobilejp/IArea/Mesh.php" role="data" />
+   <file baseinstalldir="/" md5sum="5bf849bdb6d3eccc68d4c097aacd41bd" name="lib/vendor/PEAR/Net/UserAgent/Mobile/GPS.php" role="data" />
+   <file baseinstalldir="/" md5sum="3297d8f5c01eb33e1ae45d7be0b33a21" name="lib/vendor/PEAR/Net/UserAgent/Mobile/GPS/Docomo.php" role="data" />
+   <file baseinstalldir="/" md5sum="8bd83ccf28677b3ef476514548a2ac5e" name="lib/vendor/PEAR/Net/UserAgent/Mobile/GPS/Exception.php" role="data" />
+   <file baseinstalldir="/" md5sum="7456e2991c45ed2a573b0c533e20a720" name="lib/vendor/PEAR/Net/UserAgent/Mobile/GPS/Ezweb.php" role="data" />
+   <file baseinstalldir="/" md5sum="fed7d2b864f089f52f008701247154a0" name="lib/vendor/PEAR/Net/UserAgent/Mobile/GPS/Provider.php" role="data" />
+   <file baseinstalldir="/" md5sum="afc809a00f528571145b8cf6ec7cb266" name="lib/vendor/PEAR/Net/UserAgent/Mobile/GPS/Softbank.php" role="data" />
+   <file baseinstalldir="/" md5sum="eeea470d93ca33dff55a1b4abfa6e268" name="lib/vendor/PEAR/Net/UserAgent/Mobile/GPS/Willcom.php" role="data" />
+   <file baseinstalldir="/" md5sum="b43e4fe41e30c397c13f9ccee318f76b" name="test/bootstrap/database.php" role="data" />
+   <file baseinstalldir="/" md5sum="99e445b44e52afe6383978eb2f00ce06" name="test/bootstrap/functional.php" role="data" />
+   <file baseinstalldir="/" md5sum="991079fe8d10bb37ea01163b27fb2383" name="test/bootstrap/unit.php" role="data" />
+   <file baseinstalldir="/" md5sum="9edbc02e1e5887404c0ffd9d66c44ecd" name="test/fixtures/test_data.yml" role="data" />
+   <file baseinstalldir="/" md5sum="f7abf8705dd239ee4b5ca6dab7d62cc5" name="test/functional/mobile_frontend/skeletonActionsTest.php" role="data" />
+   <file baseinstalldir="/" md5sum="3dbb728b843dbf2bb940ed44376b750c" name="test/functional/pc_frontend/skeletonActionsTest.php" role="data" />
+   <file baseinstalldir="/" md5sum="52440ab0abcc01c98551283f1e9942e1" name="test/unit/model/SkeletonTest.php" role="data" />
+   <file baseinstalldir="/" md5sum="a82b978a501dae17c9c0606b3a49f460" name="web/js/gears_init.js" role="data" />
+   <file baseinstalldir="/" md5sum="6b4108b942b64fbfb950dbfa4e410893" name="web/js/iPhone.js" role="data" />
+   <file baseinstalldir="/" md5sum="d7552756999b000898d727c3aa679410" name="web/js/swfobject2.js" role="data" />
+   <file baseinstalldir="/" md5sum="83c5171baf9c72033202e3db71af8489" name="web/swf/googlemap.fla" role="data" />
+   <file baseinstalldir="/" md5sum="97e75732b9f000760f0f54333b173a4e" name="web/swf/googlemap.swf" role="data" />
+   <file baseinstalldir="/" md5sum="cf387ce71cfc23193ee5b688fda4a7ac" name="INSTALL" role="data" />
+   <file baseinstalldir="/" md5sum="86d3f3a95c324c9479bd8986968f4327" name="LICENSE" role="data" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.3</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.2.0</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-01-23</date>
+   <license>Apache</license>
+   <notes>first release</notes>
+  </release>
+ </changelog>
+</package>
